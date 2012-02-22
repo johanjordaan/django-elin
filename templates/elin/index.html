@@ -1,0 +1,49 @@
+{% extends "templates/base.html" %}
+
+{% block title %}index{% endblock %}
+
+{% block extra_header %}
+	<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+	<script type="text/javascript">
+    function showRecaptcha(element) {
+     Recaptcha.create("6Le3M8wSAAAAAKFqpj3PJzmx6fjSHuLySDLo2NuM", element, {
+       theme: "white",
+       callback: Recaptcha.focus_response_field});
+    };
+		
+		$(document).ready(function() { 
+			showRecaptcha("recaptcha_div");
+		});
+	</script>
+{% endblock %}
+
+{% block content %}
+	<table width="100%">
+    <tr>
+			<td width="20%"></td>
+			<td>
+				<div class="ui-corner-all ui-widget-content" style="margin:20px">
+          <div style="margin:20px" align="center">
+            <i>Enter your email address in the field below. An email will be sent to you with login details to complete the process.</i>
+            <br><br>
+           
+            <form action="/elin/" method="post">
+              {% csrf_token %}
+              {% if form.email.errors %}
+                <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">{{ form.email.errors }}</div>
+              {% endif %}
+              <label for="id_subject">E-mail Address :</label> {{ form.email }}
+              <br><br>
+              {%if message %}
+                <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">{{ message }}</div>
+              {% endif %}
+              <div id="recaptcha_div" align="center"></div><br>
+              <input type="submit" value="Send Login Details" />
+            </form>
+					</div>
+				</div>
+			</td>
+			<td width="20%"></td>
+		</tr>
+	</table>
+{% endblock %}

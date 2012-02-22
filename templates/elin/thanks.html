@@ -1,0 +1,24 @@
+{% extends "templates/base.html" %}
+
+{% block title %}thank you{% endblock %}
+
+{% block extra_header %}
+{% endblock %}
+
+{% block content %}
+	<table width="100%">
+    <tr>
+			<td width="20%"></td>
+			<td>
+				<div class="ui-corner-all ui-widget-content" style="margin:20px">
+          <br>
+          <div style="margin:20px">
+              <i>An email has been sent to [{{ email }}] please follow the instructions to log into the system and capture your registration details.</i>
+					</div>
+          <br>
+				</div>
+			</td>
+			<td width="20%"></td>
+		</tr>
+	</table>
+{% endblock %}
