@@ -3,6 +3,8 @@ django-elin [UNDER CONSTRUCTION]
 
 PLEASE CHECk BACK SOON THIS SITE IS UNDER CONSTRUCTION. THE CODE IS BEING DIVORCED FROM THE ORIGINAL PROJECT FOR WHICH IT WAS DEVELOPED.
 
+To see the current progress have a look on Trello : [https://trello.com/board/django-elin](https://trello.com/board/django-elin/4f4545a50b4f0def04c33b73)
+
 This is a django application that allows for password-less login via email. 
 
 The process works as follows: 
